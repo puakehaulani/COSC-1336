@@ -12,3 +12,5 @@
                                                      
 
 repo for assignments for COSC-1336 at austin cc, fall 2023
+
+not for stealing, just uploading so my github has python projects lol
