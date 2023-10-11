@@ -14,3 +14,13 @@
 # %%%%%
 # 5. Turn in your program to the practice assignment link in course
 # content.
+print('Creating a rectangle')
+integer = int(input('Please enter positive integer no greater than 15: '))
+while integer < 0 or integer > 15:
+    print('ERROR: The integer cannot be negative or greater than 15.')
+    integer = int(input('Please enter a valid number: '))
+character = str(input('Please enter a character to create the rectangle: '))
+for row in range(integer):
+    for col in range(integer):
+        print(character, end='')
+    print()
