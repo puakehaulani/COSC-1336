@@ -23,10 +23,3 @@ while keep_going == 'y':
         print('Error: Invalid Entry')
     keep_going = input('Do you want to keep going? Enter y for yes: ')
     
-# 2. In a second program:
-#       Write a while loop that asks the user to enter two numbers.
-#       The numbers should be added and the sum displayed.
-#       The loop should ask the user if he or she wishes to perform the operation again.
-#       If so, the loop should repeat, otherwise it should terminate.
-
-
