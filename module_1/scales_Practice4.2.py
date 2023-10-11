@@ -8,3 +8,18 @@
 #       total before you start the loop.
 # Turn in your program to the practice assignment link in course
 # content.
+
+
+print('This program creates a table of numbers and their multiple of ten. It needs a low number and a high number to run.')
+low_number = int(input('Low number: '))
+high_number = int(input('High number: '))
+print('Number\tMultiple')
+print('==============')
+for number in range(low_number, high_number):
+    multiplied = number * 10
+    print(f'{number}\t{multiplied}')
+total = 0
+for number in range(low_number, high_number):
+    total += number
+print(f'Total accumulated numbers: {total}')
+
