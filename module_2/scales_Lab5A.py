@@ -1,40 +1,50 @@
-# Lab 5A –Void Functions
+# lexi scales, complete
+# this program takes in numeric ratings from critics for restaurants and gives the restaurant a star rating.
 
-# Average Restaurant Rating and Number of Stars – A restaurant receives numeric scores of 0-10 from five different food critics. The higher the score, the better the rating.  The average score translates into a 1 – 5 star rating.  
-# Write an IPO diagram and Python program that has two functions, main and determine_stars.
-# main – Should accept input of five numeric ratings from the user USING A LOOP.   It should then calculate the average numeric score for the restaurant.    The numeric average should be passed to the determine_stars function.
+def main():
+    # this function accepts five numeric ratings from the user, and calculates the average score. it then calls a function to process that average score. 
+    NUMBER_OF_RATINGS = 5
+    total_ratings = 0
+    average_ratings = 0
+    for score in range(NUMBER_OF_RATINGS):
+        rating = int(input('Enter critic\'s score between 0 and 10: '))
+        while rating < 0 or rating > 10:
+            print('Error: critic\'s score must be between 0 and 10')
+            rating = int(input('Enter valid critic score: '))
+        total_ratings += rating
+    average_ratings = total_ratings / NUMBER_OF_RATINGS    
+    
+    star_rating = determine_stars(average_ratings)
+    star_display = ''
+    if star_rating == 0:
+        star_display = '˙◠˙no stars˙◠˙'
+    for star in range(star_rating):
+        star_display = '⭐' * star_rating
+    
+    print(f'\nYour average numeric score is {average_ratings:.2f}.')
+    print(f'Your final star rating for this restaurant is... {star_display}')
 
-# determine_stars  – should display the number of stars based on the numeric average:
+    
+def determine_stars(number):
+    # this function calculates a number of stars based on the number it receives
+    FIVE_STAR_MIN = 9.0
+    FOUR_STAR_MIN = 8.0
+    THREE_STAR_MIN = 7.0
+    TWO_STAR_MIN = 6.0
+    ONE_STAR_MIN = 5.0
+    
+    if number >= FIVE_STAR_MIN:
+       stars = 5
+    elif number >= FOUR_STAR_MIN:
+      stars = 4
+    elif number >= THREE_STAR_MIN:
+      stars = 3
+    elif number >= TWO_STAR_MIN:
+      stars = 2
+    elif number >= ONE_STAR_MIN:
+      stars = 1
+    else:
+        stars = 0
+    return stars
 
-#        Greater than 9:   *****
-# 8.0 - 8.9:   	 ****
-# 7.0 – 7.9:              ***
-# 6.0 – 6.9:              **
-# 5.0 – 5.9:  	  *
-# Below 5.0             No stars
-
-# Design:
-# Design your program logic using pseudocode in the attached IPO Diagram.  You should have 2 separate diagrams.  One for the main function and one for the determine_stars  function.
-
-# Modularity:  Your program should contain 2 functions:   a main function to accept input from the user and calculate average and a second function to display the number of stars.
-# Input Validation:  The test scores entered by the user should be in the range 0-10
-# Output:   Display both the numeric average (rounded to two decimals) and the number of stars.
-# Sample Dialog:   
-# Enter critic's score between 0 and 10: -1
-# Error: Enter critic's score between 0 and 10: 5
-# Enter critic's score between 0 and 10: 6
-# Enter critic's score between 0 and 10: 7
-# Enter critic's score between 0 and 10: 8
-# Enter critic's score between 0 and 10: 9
-# Your score of 7.0 gives you ***
-# >>>
-# Programming Style Requirements.  
-# 	•	Comments – Begin your program with a comment that includes: a) your name, b)program status – either “Complete” or describe any incomplete or non-functioning part of your program c)A 1-3 line description of what the program does.
-# 	•	Function comments – each function should begin with a comment explaining what the function does
-# 	•	Variable names – use meaningful variable names such as total_taxes or num_cookies.
-# 	•	Function names – use meaningful verb names for functions such as display_taxes. 
-# 	•	Named constants – Use named constants for all number values that will not be changed in the program such as RECIPE_SUGAR = 1.5.   See section 2.9 on Named Constants
-
-# You should have 2 files to turn in:  
-# Your program file:    yourlastname_Lab5A.py 
-# Your IPO diagram:   yourlastname_Lab5A_IPO.docx
+main()
