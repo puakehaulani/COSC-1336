@@ -14,3 +14,15 @@
 # the side from main, calculate the square perimeter, and return it
 # to main.
 # Turn in your 2 .py files to the practice assignment link in course content.
+
+import random
+import square
+
+def main():
+    side = random.randint(1,100)
+    sq_area = square.square_area(side)
+    sq_perim = square.square_perimeter(side)
+    print(f'The side is {side}, the square area is {sq_area:,}, and the square perimeter is {sq_perim:,}')
+    
+main()
+    
