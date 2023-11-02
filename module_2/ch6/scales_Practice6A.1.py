@@ -2,10 +2,22 @@
 # writes your name to the file, then someone else’s name. Then, write your age to
 # the file. Close the file.
 # 2. Open my_name.txt in notepad and view the contents.
-# 3. Write a program that opens the my_name.txt file that was created by the
-# program in problem 1, reads the names from the file, displays the names on the
-# screen. Read your age and divide it by two. Print both age and age divided by 2
-# and then close the file. Don’t forget to strip off the newline character when you
-# read in the names and convert the age to int.
-# 4. Turn in your program to the practice assignment link in course
-# content.
+
+
+# This program writes personal data to a file
+
+def main():
+    # open a file called my_name.txt
+    outfile = open('my_name.txt', 'w')
+    # write my name to the file
+    outfile.write('lexi scales\n')
+    # write someone elses name to the file
+    outfile.write('lady scales\n')
+    # write my age to the file
+    outfile.write('34\n')
+    # close the file
+    outfile.close()
+
+if __name__ == '__main__':
+    main()
+    
