@@ -11,3 +11,16 @@
 # Bess Robinson 77.0
 # Eddie Nguyen 87.0
 # Turn in your program to the practice assignment link in course content.
+
+# this program reads a file with student records. it reads through the records and displays the content
+
+def main():
+    # open file
+    infile = open('students.txt', 'r')
+    # loop through record
+    
+        # display name and score on one line
+    # close file
+    infile.close()
+if __name__ == '__main__':
+    main()
