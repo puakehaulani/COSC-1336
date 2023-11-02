@@ -11,16 +11,12 @@
 def main():
     # open file
     infile = open('number_list.txt', 'r')
-    # read first line
-    line = infile.readline()
-    # while there are lines in the file, read the contents
-    while line != '':
+    # for loop checking if there are lines in the file, read the contents
+    for line in infile:
         # convert line to integer
         num = int(line)
         # print line
         print(f'{num}')
-        # read next line
-        line = infile.readline()
     # close file
     infile.close()
     
