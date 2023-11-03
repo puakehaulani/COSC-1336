@@ -13,7 +13,6 @@
 
 # this program reads a file of numbers, calculates the sum and average of the numbers, and displays these amounts.
 def main():
-    pass
     # initialize counter var
     count = 0
     # initialize sum var
@@ -29,6 +28,13 @@ def main():
             # convert the number to an int and add number to the sum var
             num = int(line)
             sum += num
+        print('╭── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ✩ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ──╮')
+        # print the sum
+        print(f'the sum of the valid numbers in this file is {sum:,}')
+        # print the average (sum/count)
+        average = sum/count 
+        print(f'the average of the valid numbers in this file is {average:,.2f}')
+        print('╰── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ✩ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ──╯')
     # IOError exceptions
     except IOError as err:
         print(f'\tERROR: Problem reading file\n\t{err}')
@@ -40,14 +46,6 @@ def main():
         print(f'\tERROR: An error has occurred\n\t{err}')
     # close file
     infile.close()
-    
-    print('╭── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ✩ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ──╮')
-     # print the sum
-    print(f'the sum of the valid numbers in this file is {sum:,}')
-    # print the average (sum/count)
-    average = sum/count 
-    print(f'the average of the valid numbers in this file is {average:,.2f}')
-    print('╰── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ✩ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ──╯')
-    
+        
 if __name__ == '__main__':
     main()

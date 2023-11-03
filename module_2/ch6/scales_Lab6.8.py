@@ -7,9 +7,10 @@ def main():
     sum = 0
     # initialize count var
     count = 0
+    # initialize average var
+    average = 0
     # try suite
     try:
-        pass
         # open file
         infile = open('random_number_list', 'r')
         # for loop to read contents
@@ -20,24 +21,24 @@ def main():
             number = int(line)
             # add number to sum
             sum += number
+        average = sum/count
         # close file
         infile.close()
+        # display sum, count, and average
+        print('╒══════════════════════════════════════════════════════╕')
+        print(f'The sum of the valid numbers in this file is {sum:,}')
+        print(f'The amount of the valid numbers in this file is {count:,}')
+        print(f'The average of the valid numbers in this file is {average:,.2f}')
+        print('╘══════════════════════════════════════════════════════╛')
     # exception for IOError
     except IOError as err:
         print("\tERROR: {err}\n\tThere was a problem reading file")
     # exception for ValueError
     except ValueError as err:
-        print("\tERROR: {err}\n\tRecord is not a valid number")
+        print(f"\tERROR: {err}\n\tRecord is not a valid number")
     # unspecified exception error
     except Exception as err:
-        print("\tERROR: {err}\n\tAn error occurred")
+        print(f"\tERROR: {err}\n\tAn error occurred")
         
-    average = sum/count
-    print('╒══════════════════════════════════════════════════════╕')
-    print(f'The sum of the valid numbers in this file is {sum:,}')
-    print(f'The amount of the valid numbers in this file is {count:,}')
-    print(f'The average of the valid numbers in this file is {average:,.2f}')
-    print('╘══════════════════════════════════════════════════════╛')
-  
 if __name__ == '__main__':
     main()
