@@ -33,9 +33,11 @@ def main():
         print("\tERROR: {err}\n\tAn error occurred")
         
     average = sum/count
+    print('╒══════════════════════════════════════════════════════╕')
     print(f'The sum of the valid numbers in this file is {sum:,}')
     print(f'The amount of the valid numbers in this file is {count:,}')
     print(f'The average of the valid numbers in this file is {average:,.2f}')
+    print('╘══════════════════════════════════════════════════════╛')
   
 if __name__ == '__main__':
     main()
