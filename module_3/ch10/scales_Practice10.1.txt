@@ -1,0 +1,23 @@
+Practice Assignment Ch. 10-1
+Answer these questions (copy into Word or Notepad)
+
+1. What is encapsulation?
+
+2. Why should an object’s data attributes be hidden from code
+outside the class?
+
+3. What is the difference between a class and an instance of a
+class?
+
+4. The following statement calls an object’s method. What is
+the name of the method? What is the name of the variable
+that references the object?
+        wallet.get_dollar()
+
+5. When the __init__ method executes, what does the self
+parameter reference?
+
+6. In a Python class, how do you hide an attribute from code
+outside the class?
+
+7. How do you call the __str__ method?
