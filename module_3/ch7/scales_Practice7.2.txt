@@ -1,0 +1,45 @@
+Practice Assignment Ch. 7-2
+Do Checkpoints 7.9 -7.14 in your text. Type your answers
+in a Word, Notepad, or save as a .pdf file (if you are using
+a Mac)
+Turn in your program to the practice assignment link in
+course content.
+
+7.9 What will the following code display?
+
+    numbers = [1, 2, 3, 4, 5]
+    my_list = numbers[1:3]
+    print(my_list)
+
+7.10 What will the following code display?
+
+    numbers = [1, 2, 3, 4, 5]
+    my_list = numbers[1:]
+    print(my_list)
+
+7.11 What will the following code display?
+
+    numbers = [1, 2, 3, 4, 5]
+    my_list = numbers[:1]
+    print(my_list)
+
+7.12 What will the following code display?
+
+    numbers = [1, 2, 3, 4, 5]
+    my_list = numbers[:]
+    print(my_list)
+
+7.13 What will the following code display?
+
+    numbers = [1, 2, 3, 4, 5]
+    my_list = numbers[−3:]
+    print(my_list)
+
+7.14 What will the following code display?
+
+    names = ['Jim', 'Jill', 'John', 'Jasmine']
+    if 'Jasmine' not in names:
+        print('Cannot find Jasmine.')
+    else:
+        print("Jasmine's family:")
+        print(names)
