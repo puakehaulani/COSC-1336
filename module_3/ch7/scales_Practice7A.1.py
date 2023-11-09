@@ -12,3 +12,26 @@
 # getting the data from the user.
 # Turn in your program to the practice assignment link in course
 # content.
+
+import random 
+
+def main():
+    POSSIBLE_NUMBERS = 7
+    # initialize list with 7 entries
+    lottery_numbers = [0] * POSSIBLE_NUMBERS
+    try:
+         # loop through list and assign each a random number 0-9
+         for index in range(len(lottery_numbers)):
+             lottery_numbers[index] = random.randint(0,9)
+    except IndexError as err:
+        print('Error, {err}')
+    except Exception as err:
+        print('Error, {err}')
+    # loop to display contents of list
+    print('Your lottery number is:')
+    for number in lottery_numbers:
+        print(number)
+
+
+if __name__ == '__main__':
+    main()
