@@ -11,11 +11,15 @@ course content.
     my_list = numbers[1:3]
     print(my_list)
 
+    [2, 3]
+
 7.10 What will the following code display?
 
     numbers = [1, 2, 3, 4, 5]
     my_list = numbers[1:]
     print(my_list)
+
+    [2, 3, 4, 5]
 
 7.11 What will the following code display?
 
@@ -23,11 +27,15 @@ course content.
     my_list = numbers[:1]
     print(my_list)
 
+    [1]
+
 7.12 What will the following code display?
 
     numbers = [1, 2, 3, 4, 5]
     my_list = numbers[:]
     print(my_list)
+
+    [1, 2, 3, 4, 5]
 
 7.13 What will the following code display?
 
@@ -35,11 +43,16 @@ course content.
     my_list = numbers[−3:]
     print(my_list)
 
+    [3, 4, 5]
+
 7.14 What will the following code display?
 
-    names = ['Jim', 'Jill', 'John', 'Jasmine']
-    if 'Jasmine' not in names:
-        print('Cannot find Jasmine.')
-    else:
-        print("Jasmine's family:")
-        print(names)
+names = ['Jim', 'Jill', 'John', 'Jasmine']
+if 'Jasmine' not in names:
+    print('Cannot find Jasmine.')
+else:
+    print("Jasmine's family:")
+    print(names)
+
+    Jasmine's family:
+   ['Jim', 'Jill', 'John', 'Jasmine']

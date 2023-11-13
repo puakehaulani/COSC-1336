@@ -1,15 +1,7 @@
-import math
-def calc_circle_is_bigger_than_square(radius, length):
-    circle_area = math.pi * radius **2
-    square_area = length **2
-    if circle_area > square_area:
-        circle_bigger = True
-    else:
-        circle_bigger = False
-    return circle_bigger, circle_area, square_area
+list1 = [1, 2, 3]
+list2 = []
+for element in list1:
+  list2.append(element)
+list1 = [4, 5, 6]
 
-def main():
-    display = calc_circle_is_bigger_than_square(25, 10)
-    print(display)
-    
-main()
+print(list2)
