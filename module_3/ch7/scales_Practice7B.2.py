@@ -17,15 +17,19 @@ def main():
     # init sum var
     sum = 0
     # create 2d list with 4 row and 3 col
-    two_d_list = [[0, 0, 0],
-                  [0, 0, 0],
-                  [0, 0, 0],
-                  [0, 0, 0]]
+    two_d_list = []
+    for i in range(ROWS):
+        row = []
+        for j in range(COLS):
+            row.append(0) 
+        two_d_list.append(row) 
     # write nested loop to get int value from user for each element in list
+    print(two_d_list)
     for r in range(ROWS):
         for c in range(COLS):
-            two_d_list[r][c] = int(input('Please enter an integer: '))
+            two_d_list[r][c] = enter_num()
     # write nested loop to sum and display each element
+    print('These are the elements in the nested list:')
     for row in two_d_list:
         for element in row:
             sum += element
@@ -33,5 +37,16 @@ def main():
     # print sum
     print(f'The total of all the elements is {sum}')
     
+def enter_num():
+    # enter_num requests user input for a number and returns it. handles exceptions by forcing reentry.
+    try:
+        return int(input('Enter a number: '))
+    except ValueError:
+        print("Enter a valid integer.")
+        return enter_num()
+    except:
+        print("Enter a valid integer.")
+        return enter_num()
+
 if __name__ == '__main__':
     main()
