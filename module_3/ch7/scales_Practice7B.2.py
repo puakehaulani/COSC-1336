@@ -11,7 +11,6 @@
 
 
 def main():
-    pass
     ROWS = 4
     COLS = 3
     # init sum var
