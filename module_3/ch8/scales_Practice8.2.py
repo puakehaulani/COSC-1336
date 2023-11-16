@@ -15,7 +15,14 @@ def main():
     # get user input of a sentence containing uppercase, lowercase, and special char
     original_sentence = str(input('Input a sentence here. Please include lowercase, uppercase, and special characters.\n'))
     # create copy of string with case flipped
-    flipped_sentence = None
+    flipped_sentence = ''
+    for ch in original_sentence:
+        if str.isupper(ch):
+            flipped_sentence += ch.lower()
+        elif str.islower(ch):
+            flipped_sentence += ch.upper()
+        else:
+            flipped_sentence += ch
     # print original sentence
     print(f'Original sentence:\n{original_sentence}')
     # print new sentence
