@@ -17,12 +17,21 @@ def main():
     last = str(input("Enter your last name: "))
     # concat inputs into full_name string
     full_name = first + middle + last
-    # count number of a/A letters in full_name
-    a_count = None
-    # count number of e/E letters in full_name
-    e_count = None
-    # count number of s/S letters in full_name
-    s_count = None
+    # init vars for counts
+    a_count = 0
+    e_count = 0
+    s_count = 0
+    # loop through string
+    for char in full_name:
+        # count number of a/A letters in full_name
+        if char == 'A' or char == 'a':
+            a_count += 1
+        # count number of e/E letters in full_name
+        if char == 'E' or char == 'e':
+            e_count += 1
+        # count number of s/S letters in full_name
+        if char == 'S' or char == 's':
+            s_count += 1
     # print counts of letters
     print('Common letter counts in full name')
     print(f'A:{a_count}')
