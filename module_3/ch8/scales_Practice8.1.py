@@ -24,13 +24,13 @@ def main():
     # loop through string
     for char in full_name:
         # count number of a/A letters in full_name
-        if char == 'A' or char == 'a':
+        if char.lower() == 'a':
             a_count += 1
         # count number of e/E letters in full_name
-        if char == 'E' or char == 'e':
+        if char.lower() == 'e':
             e_count += 1
         # count number of s/S letters in full_name
-        if char == 'S' or char == 's':
+        if char.lower() == 's':
             s_count += 1
     # print counts of letters
     print('Common letter counts in full name')
