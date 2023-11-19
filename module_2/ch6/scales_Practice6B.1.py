@@ -15,24 +15,28 @@
 # this program reads a file with student records. it reads through the records and displays the content
 
 def main():
-    # print header
-    print(f'Name\t\tScore')
-    print('-----------------------')
-    # open file
-    infile = open('students.txt', 'r')
-    # read first records name field
-    name = infile.readline()
-    # read rest of the file
-    while name != '':
-        # read the score field
-        score = float(infile.readline())
-        # strip newline from name
-        name = name.rstrip('\n')
-        # display name and score on one line
-        print(f'{name}\t{score:.1f}')
-        # read next record
+    try:
+        # open file
+        infile = open('students.txt', 'r')
+        # read first records name field
         name = infile.readline()
-    # close file
-    infile.close()
+        # print header
+        print(f'Name\t\tScore')
+        print('-----------------------')
+        # read rest of the file
+        while name != '':
+            # read the score field
+            score = float(infile.readline())
+            # strip newline from name
+            name = name.rstrip('\n')
+            # display name and score on one line
+            print(f'{name}\t{score:.1f}')
+            # read next record
+            name = infile.readline()
+        # close file
+        infile.close()
+    # handle exceptions
+    except Exception as err:
+        print('Error: {err}')
 if __name__ == '__main__':
     main()

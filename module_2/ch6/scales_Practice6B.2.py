@@ -28,6 +28,8 @@ def main():
             # convert the number to an int and add number to the sum var
             num = int(line)
             sum += num
+        # close file
+        infile.close()
         print('╭── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ✩ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ──╮')
         # print the sum
         print(f'the sum of the valid numbers in this file is {sum:,}')
@@ -44,8 +46,7 @@ def main():
     # unspecified errors
     except Exception as err:
         print(f'\tERROR: An error has occurred\n\t{err}')
-    # close file
-    infile.close()
+
         
 if __name__ == '__main__':
     main()
