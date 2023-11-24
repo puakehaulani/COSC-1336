@@ -8,3 +8,19 @@
 # program
 # Turn in your programs/modules to the practice assignment link in
 # course content.
+
+def save_dictionary():
+    # open file
+    outfile = open('dogfarm.txt', 'w')
+    # write data to file
+    
+    # close file
+    outfile.close()
+
+def get_dictionary():
+    # open file
+    infile = open('dogfarm.txt', 'r')
+    # retrieve data
+    
+    # close file
+    infile.close()

@@ -78,11 +78,11 @@ def view_dogs(foster_dogs):
         print('No dogs on the farm right now')
     else:
         print('----------------------')
-        print('Name\tDescription')
-        print('----------------------')
-        
-        for dog in foster_dogs:
-            print(f'{dog}\t{foster_dogs[dog]}')
+    print('Name\tDescription')
+    print('----------------------')
+    
+    for dog in foster_dogs:
+        print(f'{dog}\t{foster_dogs[dog]}')
     
 # The look_up function looks up a name in the foster_dogs dictionary.
 def look_up(foster_dogs):
