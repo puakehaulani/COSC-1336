@@ -16,11 +16,12 @@
 # This program uses a dictionary to keep track of foster dogs
 
 # Global constants for menu choices
-LOOK_UP = 1
-ADD = 2
-CHANGE = 3
-DELETE = 4
-QUIT = 5
+VIEW_ALL = 1
+LOOK_UP = 2
+ADD = 3
+CHANGE = 4
+DELETE = 5
+QUIT = 6
 
 DEFAULT = 'Pupper not found in this pack.'
 # main function
@@ -36,7 +37,9 @@ def main():
         choice = get_menu_choice()
 
         # Process the choice.
-        if choice == LOOK_UP:
+        if choice == VIEW_ALL:
+            view_dogs(foster_dogs)
+        elif choice == LOOK_UP:
             look_up(foster_dogs)
         elif choice == ADD:
             add(foster_dogs)
@@ -51,23 +54,36 @@ def get_menu_choice():
     print('===========================')
     print('Foster dogs at the Dog Farm')
     print('---------------------------')
-    print('1. Look up a dog')
-    print('2. Add a new dog to the pack')
-    print('3. Change a dog\'s decription')
-    print('4. Remove adopted dog from the Farm')
-    print('5. Quit the program')
+    print('1. View all dogs')
+    print('2. Look up a dog')
+    print('3. Add a new dog to the pack')
+    print('4. Change a dog\'s decription')
+    print('5. Remove adopted dog from the Farm')
+    print('6. Quit the program')
     print()
 
     # Get the user's choice.
     choice = int(input('Enter your choice: '))
 
     # Validate the choice.
-    while choice < LOOK_UP or choice > QUIT:
+    while choice < VIEW_ALL or choice > QUIT:
         choice = int(input('Enter a valid choice: '))
 
     # return the user's choice.
     return choice
 
+# The view_dogs function displays all the dogs and descriptions in the foster_dogs dictionary in a readable format.
+def view_dogs(foster_dogs):
+    if len(foster_dogs) == 0:
+        print('No dogs on the farm right now')
+    else:
+        print('----------------------')
+        print('Name\tDescription')
+        print('----------------------')
+        
+        for dog in foster_dogs:
+            print(f'{dog}\t{foster_dogs[dog]}')
+    
 # The look_up function looks up a name in the foster_dogs dictionary.
 def look_up(foster_dogs):
     # Get a name to look up.
