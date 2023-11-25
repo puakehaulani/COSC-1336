@@ -79,7 +79,7 @@ def enter_choice():
         # return the user's choice.
         return choice
     except ValueError:
-        print("Enter a valid choice ROBERT.")
+        print("Enter a valid choice.")
         return enter_choice()
     except:
         print("Enter a valid choice.")
