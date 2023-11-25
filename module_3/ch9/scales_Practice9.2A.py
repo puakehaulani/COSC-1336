@@ -1,19 +1,16 @@
-# Practice Assignment Ch. 9-1
-# 1. Classroom Sections: Group assignment – break into groups of 3 or 4.
-# 2. Online students: do on your own.
-# 3. Using the example of the birthday dictionary in Chapter 9, create a dictionary application, subject of your choosing
-# (appropriate content)
-# 4. In addition to the menu choices provided to the user in the example, add menu items to display the entire
-# dictionary.
-# 5. Each person will create a separate module for their function(s) with the main program importing all the modules.
-#  Person 1 – main program/menu display, coordinates other programs
-#  Person 2 – Look up and display functions
-#  Person 3 – Add function
-#  Person 4 - Change, and Delete functions
-# Turn in your programs/modules to the practice assignment link in course content.
-
-
+# Practice Assignment Ch. 9-2
+# Still in the groups from last class (online students do remainder of assignment), using
+# the dictionary application you created, add two new menu items:
+#  Save the dictionary – write a function to pickle the dictionary to a file
+#  Retrieve the dictionary – write a function to retrieve the pickled
+# dictionary that was saved earlier
+#  Put both functions in a separate module that is imported by your main
+# program
+# Turn in your programs/modules to the practice assignment link in
+# course content.
 # This program uses a dictionary to keep track of foster dogs
+
+import pickling
 
 # Global constants for menu choices
 VIEW_ALL = 1
@@ -21,9 +18,12 @@ LOOK_UP = 2
 ADD = 3
 CHANGE = 4
 DELETE = 5
-QUIT = 6
+WRITE_FILE = 6
+READ_FILE = 7
+QUIT = 8
 
 DEFAULT = 'Pupper not found in this pack.'
+FILENAME = 'dogfarm.dat'
 # main function
 def main():
     # Create an empty dictionary.
@@ -47,11 +47,14 @@ def main():
             change(foster_dogs)
         elif choice == DELETE:
             delete(foster_dogs)
+        elif choice == WRITE_FILE:
+            pickling.save_dictionary(foster_dogs, FILENAME)
+        elif choice == READ_FILE:
+            pickling.get_dictionary(FILENAME)
 
 # The get_menu_choice function displays the menu and gets a validated choice from the user.
 def get_menu_choice():
-    print()
-    print('===========================')
+    print('\n===========================')
     print('Foster dogs at the Dog Farm')
     print('---------------------------')
     print('1. View all dogs')
@@ -59,8 +62,9 @@ def get_menu_choice():
     print('3. Add a new dog to the pack')
     print('4. Change a dog\'s decription')
     print('5. Remove adopted dog from the Farm')
-    print('6. Quit the program')
-    print()
+    print('6. Save foster roster to file')
+    print('7. Read saved foster roster file')
+    print('8. Quit the program\n')
 
     chosen = enter_choice()
     return chosen 
@@ -75,7 +79,7 @@ def enter_choice():
         # return the user's choice.
         return choice
     except ValueError:
-        print("Enter a valid choice.")
+        print("Enter a valid choice ROBERT.")
         return enter_choice()
     except:
         print("Enter a valid choice.")
@@ -144,6 +148,7 @@ def delete(foster_dogs):
         print(F'{DEFAULT}\n')
 
 # Call the main function.
-main()
+if __name__ == '__main__':
+    main()
 
     
