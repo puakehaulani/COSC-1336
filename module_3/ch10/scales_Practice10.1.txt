@@ -2,22 +2,30 @@ Practice Assignment Ch. 10-1
 Answer these questions (copy into Word or Notepad)
 
 1. What is encapsulation?
+Encapsulation is combining data and code into a single object. It addresses the problem of code and data separation in object oriented programming.
 
 2. Why should an object’s data attributes be hidden from code
 outside the class?
+Hiding an objects data attributes from outside the class protects the data from being directly accessed and changed by the outside code. It protects the data from accidental corruption.
 
 3. What is the difference between a class and an instance of a
 class?
+A class is the code that specifies the data attributes and methods for a particular type of object, and an instance of a class is the object created from the class. The class is like a blueprint, while the instance of a class is the actual houses built with the blueprint specs.
 
 4. The following statement calls an object’s method. What is
 the name of the method? What is the name of the variable
 that references the object?
         wallet.get_dollar()
+The name of method is get_dollar
+The name of the variable that references the object is wallet
 
 5. When the __init__ method executes, what does the self
 parameter reference?
+The self parameter references the specific object that the method operates on. In other words, it is referencing the instance of the object that is created by the class, and not the class itself or other instances.
 
 6. In a Python class, how do you hide an attribute from code
 outside the class?
+To hide an attribute from code outside the class in Python, the attribute name is prefaced with two underscores, ex:  __name
 
 7. How do you call the __str__ method?
+It is automatically called when passing an object as an argument to the print function. It can also be called automatically when an object is passed as an argument to the __str__ method, which looks like this: var_name = str(object_name). It can't be called directly.

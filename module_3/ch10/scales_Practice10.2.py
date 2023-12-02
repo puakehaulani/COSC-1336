@@ -5,26 +5,24 @@
 # • One for the class
 # • One for the class implementation (main program)
 
-# 1. Pet Class
-# Write a class named Pet, which should have the following data attributes:
-# • __name (for the name of a pet)
-# • __animal_type (for the type of animal that a pet is. Example values are 'Dog', 'Cat', and 'Bird')
-# • __age (for the pet's age)
-
-# The Pet class should have an __init__ method that creates these atrributes. It should also have the following methods:
-
-# • set_name
-#   This method assigns a value to the __name field
-# • set_animal_type
-#   This method assigns a value to the __animal_type field
-# • set_age
-#   This method assigns a value to the __age field
-# • get_name
-#   This method returns the value of the __name field
-# • get_animal_type
-#   This method returns the value of the __animal_type field
-# • get_age
-#   This method returns the value of the __age field
-
 # Once you have written the class, write a program that creates an object of the class and prompts the user to enter the name, type, and age of his or her pet.
 # This data should be stored as the object's attributes. Use the object's accessor methods to retrieve the pet's name, type, and age, and display this data on the screen.
+
+import pet
+
+# Main creates an object of the class and prompts the user to enter the name, type, and age of his or her pet
+def main():
+    # Get the pet data
+    name = str(input('Enter your pet\'s name: '))
+    type = str(input('Enter your pet\'s type: '))
+    age = str(input('Enter your pet\'s age: '))
+    # create instance of Pet class
+    user_pet = pet.Pet(name, type, age)
+    # display the data that was entered
+    print('Here is what you entered:')
+    print(f'Name: {user_pet.get_name()}')
+    print(f'Type: {user_pet.get_animal_type()}')
+    print(f'Age: {user_pet.get_age()}')
+
+if __name__ == '__main__':
+    main()
